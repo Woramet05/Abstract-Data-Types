@@ -51,7 +51,7 @@ public class IntegerSet {
     }
     public void remove(Integer x){
         if (Numbers.contains(x) && x != null && Numbers != null) {
-        Numbers.remove(x);
+            Numbers.remove(x);
         }
         CheckRep();
     }
