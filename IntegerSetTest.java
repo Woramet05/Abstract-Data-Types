@@ -40,7 +40,7 @@ public class IntegerSetTest {
             System.out.println("Fall"+a.toString());
             failed++;
         }
-        //การตรวจสอบข้อมูล (contains)
+        //Test 4 : การตรวจสอบข้อมูล (contains)
         if (a.contains(1) && !a.contains(2)) {
             System.out.println("Pass");
             passed++;
