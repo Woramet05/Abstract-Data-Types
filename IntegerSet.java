@@ -4,12 +4,19 @@ import java.util.ArrayList;
  */
 public class IntegerSet {
     ArrayList<Integer> Numbers; //Rep
-    // AF(ArrayList<Integer>) = เซตของตัวเลขทั้งหมดที่อยู่ใน ArrayList<Integer>
+    // AF(Number) = เซตของตัวเลขทั้งหมดที่อยู่ใน ArrayList<Integer>
     // RI Integer ต้องเรียงจากน้อยไปมาก, Integer ห้ามมี null หรือตัวเลขซ้ำ
+
+    /*
+     * เริ่มต้นสร้างเซตว่าง
+     */
     public IntegerSet(){
         Numbers = new ArrayList<>();
         CheckRep();
     }
+    /**
+     * ตรวจสอบว่า Rep Invariant เป็นจริงหรือไม่
+     */
     private void CheckRep() {
         if (Numbers == null) {
             throw new RuntimeException("Number must not contain NULL.");
@@ -23,7 +30,7 @@ public class IntegerSet {
         }
     }
     /*
-    * เพิ่มตัวเลขเข้าไป
+    * การเพิ่มตัวเลขเข้าไป
     * @param x ตัวเลขที่ต้องการเพิ่ม
      */
     public void add(Integer x) {
@@ -49,15 +56,28 @@ public class IntegerSet {
         }
         CheckRep();
     }
+    /*
+     * การลบตัวเลข
+     * @param x ตัวเลขที่ต้องการลบ
+     */
     public void remove(Integer x){
         if (Numbers.contains(x) && x != null && Numbers != null) {
             Numbers.remove(x);
         }
         CheckRep();
     }
+    /*
+     * ตรวจสอบว่ามีตัวเลขอยู้ในเซตมั้ย
+     * @param x คือตัวอักษรที่ต้องการตรวจสอบ
+     * @return true หากมี x อยู่ในเซต, false หากไม่มี
+     */
     public boolean contains(Integer x){
         return Numbers.contains(x);
     }
+    /*
+     * คืนค่าขนาดของเซต
+     * @return จำนวนสมาชิกในเซต
+     */
     public int size(){
         return Numbers.size();
     }
